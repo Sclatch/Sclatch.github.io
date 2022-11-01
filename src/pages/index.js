@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 const IndexPage = () => {
   return (
     <Layout>
-      Hello world
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">About</span>
     </Layout>
   )
 }
