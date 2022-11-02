@@ -4,9 +4,9 @@ import Footer from "./footer"
 
 export default function Layout ({children}){
     return (
-        <div>
+        <div class="bg-gray-200 dark:bg-gray-800">
             <Header/>
-        <div style={{height: "620px"}}>
+        <div class= "px-8" style={{height: "1000px"}}>
             
             {/* Main Page Content*/}
             {children}
