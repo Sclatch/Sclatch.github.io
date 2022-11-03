@@ -5,7 +5,7 @@ import Resume from "../documents/RESUME_Base.pdf"
 const IndexPage = () => {
   return (
     <Layout>
-      <body id="home" class="pt-4 sm:pt-12">
+      <body>
         <div class="flex justify-center items-center py-20">
           <div class="flex flex-col">
             <span class="text-gray-900 dark:text-white font-sans text-lg sm:text-2xl sm:-ml-4 ">Hello, I am</span>
