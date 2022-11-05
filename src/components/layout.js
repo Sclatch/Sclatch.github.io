@@ -6,7 +6,7 @@ export default function Layout ({children}){
     return (
         <div class="bg-gray-200 dark:bg-gray-800">
             <Header/>
-        <div id="home" class= "px-8 pt-4 sm:pt-12" style={{height: "1000px"}}>
+        <div class= "pt-4 sm:pt-14">
             
             {/* Main Page Content*/}
             {children}
