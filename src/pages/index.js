@@ -1,7 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Resume from "../documents/RESUME_Base.pdf"
-import ProfilePic from "../images/pfp.jpg"
 import MobileProfilePic from "../images/squarepfp.jpg"
 
 export const Head = () => (
@@ -19,8 +18,9 @@ const IndexPage = () => {
         {/* Home Intro */}
         <div id="home" class="flex justify-center items-center py-24">
           <div class="flex flex-col">
-            <p class="text-gray-900 dark:text-white font-sans text-lg sm:text-2xl sm:-ml-4 ">Hello, I am</p>
+            <p class="text-gray-900 dark:text-white font-sans text-lg sm:text-2xl sm:-ml-4 z-10">Hello, I am</p>
             <p class="box-decoration bg-gradient-to-r from-blue-400 to-cyan-300 text-white 
+            transition ease-in-out hover:scale-110 duration-700
             dark:bg-gradient-to-r dark:from-blue-900 dark:to-cyan-900
             font-semibold text-4xl sm:text-7xl py-2 px-4 rounded-xl text-center whitespace-nowrap">
               Kevin 
@@ -57,9 +57,9 @@ const IndexPage = () => {
         </div>
 
         {/* About Me */}
-        <div id="about" class="lg:flex lg:justify-between items-center px-4 lg:px-12 py-11 bg-white dark:bg-gray-900 shadow-lg">
-          <div class="shrink-0 lg:order-last hidden lg:block">
-            <img src={ProfilePic} class="w-96 rounded-xl" alt="Profile"/>
+        <div id="about" class="lg:flex lg:justify-between items-center px-4 lg:px-12 lg:pr-4 py-11 bg-white dark:bg-gray-900 shadow-lg">
+          <div class="self-stretch w-full lg:order-last hidden lg:block -my-11
+          bg-center bg-no-repeat bg-cover bg-[url('../images/pfp.jpg')]">
           </div>
           <div class ="grid grid-cols-1 lg:pr-12">
             <p class="text-gray-900 dark:text-white
@@ -70,27 +70,32 @@ const IndexPage = () => {
             <div class="py-4 lg:order-last lg:hidden place-self-center">
               <img src={MobileProfilePic} class="rounded-full w-64" alt="Profile"/>
             </div>
-            <p class="indent-12 text-gray-900 dark:text-white text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-            labore et dolore magna aliqua. Velit ut tortor pretium viverra. Leo urna molestie at elementum eu. 
-            Felis eget velit aliquet sagittis id consectetur purus ut faucibus. Ut venenatis tellus in metus 
-            vulputate eu scelerisque felis imperdiet. Orci porta non pulvinar neque. Quam quisque id diam vel 
-            quam elementum pulvinar etiam. Velit aliquet sagittis id consectetur. Fringilla est ullamcorper eget 
-            nulla facilisi etiam dignissim. Mauris nunc congue nisi vitae suscipit tellus mauris a diam. Habitasse 
-            platea dictumst quisque sagittis purus sit amet volutpat. Vestibulum lorem sed risus ultricies tristique 
-            nulla aliquet enim.
+            <p class="text-gray-900 dark:text-white text-lg lg:text-xl leading-relaxed lg:leading-loose">
+              <p class="indent-6 lg:indent-12">
+              I recently graduated from Ontario Tech University with a Bachelor's degree 
+              in Computer Science specializing in Data Science. I'm a passionate programmer 
+              and a digital artist that is eager to learn new things to challenge myself. 
+              I have made multiple software projects under my belt, which can be seen in 
+              details on my Github page. Here are some points about myself:
+              </p>
 
-            Urna cursus eget nunc scelerisque viverra mauris in. Eu mi bibendum neque egestas congue quisque egestas 
-            diam. Id cursus metus aliquam eleifend mi. Enim ut tellus elementum sagittis vitae et leo duis ut. 
-            Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Ipsum faucibus vitae aliquet 
-            nec ullamcorper. Quis commodo odio aenean sed adipiscing diam. Nisi vitae suscipit tellus mauris a diam 
-            maecenas sed enim. Urna duis convallis convallis tellus id interdum velit. Posuere urna nec tincidunt 
-            praesent semper. Pellentesque id nibh tortor id aliquet lectus proin nibh. Eget nunc lobortis mattis aliquam. 
-            Volutpat lacus laoreet non curabitur gravida.
+              <ul class="list-disc list-outside ml-8 lg:ml-16 py-4">
+                <li>I have experience on multiple programming languages such as: C++, C#, Java, Python, etc.</li>
+                <li>I enjoy designing UIs. I excelled at front-end and eager to learn UX design.</li>
+                <li>I am a multilingual; I speak Indonesian (native), English, German and learning Japanese.</li>
+                <li>I have been a digital artist for more than a decade and have been a freelance artist taking commissions online.</li>
+              </ul>
+
+              <p class="indent-6 lg:indent-12">
+              I'm seeking for a opportunity that puts me in professional settings, 
+              discover new experience, and apply the knowledge I have learned. 
+              I know multiple frameworks, tools, environments, etc., 
+              more information below. This website contains most of my projects/works and contacts.
+              </p>
 
             </p>
             {/* LinkedIn Button */}
-            <a class="flex items-center justify-center lg:w-max mt-8 gap-2 rounded-xl bg-blue-500 p-3 lg:px-12 hover:bg-blue-400"
+            <a class="flex items-center justify-center lg:w-max mt-4 gap-2 rounded-xl bg-blue-500 p-3 lg:px-12 hover:bg-blue-400"
             href="https://www.linkedin.com/in/kevin-chandra98/" target="_blank" rel="noopener noreferrer">
               <svg className="h-7 fill-white" viewBox="0 0 24 24">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -103,115 +108,149 @@ const IndexPage = () => {
         </div>
 
         {/* Technical Skills */}
-        <div class="flex flex-col justify-center items-center pt-8 pb-16">
-          <p class="text-gray-900 dark:text-white
-          font-semibold text-2xl sm:text-4xl py-8 rounded-xl text-center lg:text-start">
-            Programming Languages
-          </p>
-          <div class="flex flex-wrap gap-8 justify-center px-4 pb-4">
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/cpp.svg').default} class="h-14" loading="lazy" alt="C++"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">C++</p>
-            </div>
+        <div class="flex flex-wrap justify-evenly py-8 px-4 lg:px-36 gap-y-4 gap-x-12">
+          <div class="flex flex-col justify-center items-center p-6
+          rounded-xl bg-white dark:bg-gray-900 drop-shadow-lg">
+            <p class="text-gray-900 dark:text-white
+            font-semibold text-2xl sm:text-4xl pb-8 text-center lg:text-start">
+              Programming Languages
+            </p>
+            <div class="flex flex-wrap gap-8 justify-center">
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/cpp.svg').default} class="h-14" loading="lazy" alt="C++"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">C++</p>
+              </div>
 
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/csharp.svg').default} class="h-14" loading="lazy" alt="C#"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">C#</p>
-            </div>
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/csharp.svg').default} class="h-14" loading="lazy" alt="C#"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">C#</p>
+              </div>
 
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/java.svg').default} class="h-14" loading="lazy" alt="Java"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Java</p>
-            </div>
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/java.svg').default} class="h-14" loading="lazy" alt="Java"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Java</p>
+              </div>
 
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/python.svg').default} class="h-14" loading="lazy" alt="Python"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Python</p>
-            </div>
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/python.svg').default} class="h-14" loading="lazy" alt="Python"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Python</p>
+              </div>
 
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/js.svg').default} class="h-14" loading="lazy" alt="JavaScript"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">JavaScript</p>
-            </div>
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/js.svg').default} class="h-14" loading="lazy" alt="JavaScript"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">JavaScript</p>
+              </div>
 
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/react.svg').default} class="h-14" loading="lazy" alt="React"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">React</p>
-            </div>
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/html.svg').default} class="h-14" loading="lazy" alt="HTML"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">HTML</p>
+              </div>
 
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/nodejs.svg').default} class="h-14" loading="lazy" alt="Node.JS"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Node.JS</p>
-            </div>
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/css.svg').default} class="h-14" loading="lazy" alt="CSS"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">CSS</p>
+              </div>
 
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/html.svg').default} class="h-14" loading="lazy" alt="HTML"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">HTML</p>
-            </div>
-
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/css.svg').default} class="h-14" loading="lazy" alt="CSS"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">CSS</p>
-            </div>
-
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/dart.svg').default} class="h-14" loading="lazy" alt="Dart"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Dart</p>
-            </div>
-            
-          </div>
-
-          <p class="text-gray-900 dark:text-white
-          font-semibold text-2xl sm:text-4xl py-8 rounded-xl text-center lg:text-start whitespace-nowrap">
-            Tools / Environments
-          </p>
-          <div class="flex flex-wrap gap-8 justify-center px-4 pb-4">
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/numpy.svg').default} class="h-14" loading="lazy" alt="NumPy"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">NumPy</p>
-            </div>
-
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/pandas.svg').default} class="h-14" loading="lazy" alt="Pandas"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Pandas</p>
-            </div>
-
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/tensorflow.svg').default} class="h-14" loading="lazy" alt="TensorFlow"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">TensorFlow</p>
-            </div>
-
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/jquery.svg').default} class="h-14" loading="lazy" alt="jQuery"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">jQuery</p>
-            </div>
-
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/flutter.svg').default} class="h-14" loading="lazy" alt="Flutter"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Flutter</p>
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/dart.svg').default} class="h-14" loading="lazy" alt="Dart"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Dart</p>
+              </div>
+              
             </div>
           </div>
 
-          <p class="text-gray-900 dark:text-white
-          font-semibold text-2xl sm:text-4xl py-8 rounded-xl text-center lg:text-start whitespace-nowrap">
-            Databases
-          </p>
-          <div class="flex flex-wrap gap-8 justify-center px-4 pb-4">
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/mongodb.svg').default} class="h-14" loading="lazy" alt="MongoDB"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">MongoDB</p>
-            </div>
+          <div class="flex flex-col justify-center items-center p-6
+          rounded-xl bg-white dark:bg-gray-900 drop-shadow-lg">
+            <p class="text-gray-900 dark:text-white
+            font-semibold text-2xl sm:text-4xl pb-8 text-center lg:text-start whitespace-nowrap">
+              Tools / Environments
+            </p>
+            <div class="flex flex-wrap gap-8 justify-center">
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/numpy.svg').default} class="h-14" loading="lazy" alt="NumPy"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">NumPy</p>
+              </div>
 
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/firebase.svg').default} class="h-14" loading="lazy" alt="Firebase"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Firebase</p>
-            </div>
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/pandas.svg').default} class="h-14" loading="lazy" alt="Pandas"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Pandas</p>
+              </div>
 
-            <div class="grid gap-2 place-items-center">
-              <img src={require('../icons/postgresql.svg').default} class="h-14" loading="lazy" alt="PostgreSQL"/>
-              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">PostgreSQL</p>
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/tensorflow.svg').default} class="h-14" loading="lazy" alt="TensorFlow"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">TensorFlow</p>
+              </div>
+
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/flutter.svg').default} class="h-14" loading="lazy" alt="Flutter"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Flutter</p>
+              </div>
             </div>
           </div>
+
+          <div class="flex flex-col justify-center items-center p-6
+          rounded-xl bg-white dark:bg-gray-900 drop-shadow-lg">
+            <p class="text-gray-900 dark:text-white
+            font-semibold text-2xl sm:text-4xl pb-8 text-center lg:text-start whitespace-nowrap">
+              Frameworks
+            </p>
+            <div class="flex flex-wrap gap-8 justify-center">
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/nodejs.svg').default} class="h-14" loading="lazy" alt="Node.JS"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Node.js</p>
+              </div>
+
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/react.svg').default} class="h-14" loading="lazy" alt="React"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">React</p>
+              </div>
+
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/gatsby.svg').default} class="h-14" loading="lazy" alt="Gatsby"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Gatsby</p>
+              </div>
+
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/material-ui.svg').default} class="h-14" loading="lazy" alt="Material UI"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Material UI</p>
+              </div>
+
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/tailwind.svg').default} class="h-14" loading="lazy" alt="Tailwind"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Tailwind</p>
+              </div>
+
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/jquery.svg').default} class="h-14" loading="lazy" alt="jQuery"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">jQuery</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-center items-center p-6
+          rounded-xl bg-white dark:bg-gray-900 drop-shadow-lg">
+            <p class="text-gray-900 dark:text-white
+            font-semibold text-2xl sm:text-4xl pb-8 text-center lg:text-start whitespace-nowrap">
+              Databases
+            </p>
+            <div class="flex flex-wrap gap-8 justify-center">
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/mongodb.svg').default} class="h-14" loading="lazy" alt="MongoDB"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">MongoDB</p>
+              </div>
+
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/firebase.svg').default} class="h-14" loading="lazy" alt="Firebase"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Firebase</p>
+              </div>
+
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/postgresql.svg').default} class="h-14" loading="lazy" alt="PostgreSQL"/>
+                <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">PostgreSQL</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* Software Projects */}
@@ -279,6 +318,31 @@ const IndexPage = () => {
             </a>
           </div>
           <div class="lg:basis-1/12 bg-gradient-to-l from-gray-200 dark:from-gray-800"/>
+        </div>
+
+        {/* Softwares */}
+        <div class="flex flex-col justify-center items-center p-6 pb-10 sm:mx-4 rounded-b-xl
+        bg-white dark:bg-gray-900 drop-shadow-md">
+          <p class="text-gray-900 dark:text-white
+          font-semibold text-2xl sm:text-4xl pb-8 text-center lg:text-start">
+            Software Proficiencies
+          </p>
+          <div class="flex flex-wrap gap-8 justify-center">
+            <div class="grid gap-2 place-items-center">
+              <img src={require('../icons/photoshop.svg').default} class="h-14" loading="lazy" alt="Photoshop"/>
+              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Photoshop</p>
+            </div>
+
+            <div class="grid gap-2 place-items-center">
+              <img src={require('../icons/csp.svg').default} class="h-14" loading="lazy" alt="Clip Studio Paint"/>
+              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Clip Studio Paint</p>
+            </div>
+
+            <div class="grid gap-2 place-items-center">
+              <img src={require('../icons/illustrator.svg').default} class="h-14" loading="lazy" alt="Illustrator"/>
+              <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Illustrator</p>
+            </div>
+          </div>
         </div>
 
         {/* Work in Progress */}
