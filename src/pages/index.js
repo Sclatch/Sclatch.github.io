@@ -2,6 +2,9 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Resume from "../documents/RESUME_Base.pdf"
 import MobileProfilePic from "../images/squarepfp.jpg"
+import ExemProject from "../components/exem"
+import PulsarProject from "../components/pulsar"
+
 
 export const Head = () => (
   <>
@@ -16,7 +19,7 @@ const IndexPage = () => {
     <Layout>
       <body>
         {/* Home Intro */}
-        <div id="home" class="flex justify-center items-center py-24">
+        <div id="home" class="flex justify-center items-center h-screen">
           <div class="flex flex-col">
             <p class="text-gray-900 dark:text-white font-sans text-lg sm:text-2xl sm:-ml-4 z-10">Hello, I am</p>
             <p class="box-decoration bg-gradient-to-r from-blue-400 to-cyan-300 text-white 
@@ -75,12 +78,12 @@ const IndexPage = () => {
               I recently graduated from Ontario Tech University with a Bachelor's degree 
               in Computer Science specializing in Data Science. I'm a passionate programmer 
               and a digital artist that is eager to learn new things to challenge myself. 
-              I have made multiple software projects under my belt, which can be seen in 
+              I have multiple software projects under my belt, which can be seen in 
               details on my Github page. Here are some points about myself:
               </p>
 
               <ul class="list-disc list-outside ml-8 lg:ml-16 py-4">
-                <li>I have experience on multiple programming languages such as: C++, C#, Java, Python, etc.</li>
+                <li>I have experience in multiple programming languages such as: C++, C#, Java, Python, etc.</li>
                 <li>I enjoy designing UIs. I excelled at front-end and eager to learn UX design.</li>
                 <li>I am a multilingual; I speak Indonesian (native), English, German and learning Japanese.</li>
                 <li>I have been a digital artist for more than a decade and have been a freelance artist taking commissions online.</li>
@@ -185,6 +188,11 @@ const IndexPage = () => {
                 <img src={require('../icons/flutter.svg').default} class="h-14" loading="lazy" alt="Flutter"/>
                 <p class="text-gray-900 dark:text-white whitespace-nowrap font-sans text-xl text-center">Flutter</p>
               </div>
+
+              <div class="grid gap-2 place-items-center">
+                <img src={require('../icons/unity.svg').default} class="h-14" loading="lazy" alt="Unity"/>
+                <p class="text-gray-900 dark:text-white font-sans text-xl text-center">Unity</p>
+              </div>
             </div>
           </div>
 
@@ -254,22 +262,29 @@ const IndexPage = () => {
         </div>
 
         {/* Software Projects */}
-        <div id="projects" class="flex flex-col items-center px-4 lg:px-12 py-11 bg-white dark:bg-gray-900 drop-shadow-2xl">
+        <div id="projects" class="flex flex-col items-center py-11 bg-white dark:bg-gray-900 drop-shadow-2xl">
           <p class="text-gray-900 dark:text-white
-          font-semibold text-5xl sm:text-7xl py-2 text-center">
+          font-semibold text-5xl sm:text-7xl pb-8 px-4 text-center">
             Software Projects
           </p>
-          <div class="flex w-full py-20 justify-center items-center ">
-            <hr class="grow border-gray-400 -mr-14"/>
-            <div class="grid justify-items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" class="w-20 stroke-gray-500">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-              </svg>
-              <p class="text-gray-500 text-lg sm:text-2xl text-center">
-                This section is still in progress
-              </p>
+          <div class="flex flex-col w-full justify-center items-center ">
+            
+            <ExemProject/>
+            <hr class="w-full border-gray-400"/>
+            <PulsarProject/>
+
+            <div class="flex justify-center items-center w-full py-10">
+              <hr class="grow border-gray-400 -mr-14"/>
+              <div class="grid justify-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" class="w-20 stroke-gray-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                </svg>
+                <p class="text-gray-500 text-lg sm:text-2xl text-center">
+                  This section is still in progress
+                </p>
+              </div>
+              <hr class="grow border-gray-400 -ml-14"/>
             </div>
-            <hr class="grow border-gray-400 -ml-14"/>
           </div>
 
           {/* Github Button */}

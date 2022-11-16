@@ -6,7 +6,7 @@ export default function Layout ({children}){
     return (
         <div class="bg-gray-200 dark:bg-gray-800">
             <Header/>
-        <div class= "pt-4 sm:pt-14">
+        <div class= "">
             
             {/* Main Page Content*/}
             {children}
